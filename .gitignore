@@ -1,0 +1,93 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual machine crash logs, core dumps, and stack traces
+hs_err_pid*
+
+# NetBeans-specific files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbi/
+*.orig
+
+# NetBeans `nbactions.xml` if it's project-specific and should be ignored
+nbproject/nbactions.xml
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.bak
+
+# Sensitive information files
+*.env
+*.key
+*.crt
+*.pem
+*.p12
+
+# Eclipse IDE-specific files (if you also use Eclipse)
+.metadata
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA-specific files (if you also use IntelliJ IDEA)
+.idea/
+*.iml
+*.ipr
+out/
+
+# Gradle-specific files
+.gradle/
+build/
+
+# Maven-specific files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Distribution directories
+dist/
+out/
+
+# macOS system files (if applicable)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Other Windows-specific files
+*.tmp
+*.swp
+*~
+
+# Backup files
+*.bak
+*.old
+*.orig
+
