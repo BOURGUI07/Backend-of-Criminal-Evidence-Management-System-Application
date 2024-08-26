@@ -18,6 +18,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.AccessLevel;
@@ -36,10 +37,10 @@ import org.hibernate.annotations.DynamicUpdate;
  * @author hp
  */
 @Entity
-@Table(name="detective",indexes={
+@Table(name="evidence",indexes={
     @Index(name="idx_evidence_id",columnList="id"),
-    @Index(name="idx_evidence_number",columnList="evidenceNumber"),
-    @Index(name="idx_item_name",columnList="itemName")
+    @Index(name="idx_evidence_number",columnList="number"),
+    @Index(name="idx_item_name",columnList="item_name")
 })
 @Data
 @EqualsAndHashCode(callSuper=false)
@@ -83,4 +84,7 @@ public class Evidence extends BaseEntity{
     @OneToMany(mappedBy="evidence",cascade=CascadeType.ALL,orphanRemoval=true)
     @JsonManagedReference
     Set<TrackEntity> trackEntities = new HashSet<>();
+    
+    @Version
+    Integer version;
 }

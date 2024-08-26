@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Index;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.AccessLevel;
@@ -31,7 +32,7 @@ import org.hibernate.annotations.DynamicUpdate;
  * @author hp
  */
 @Entity
-@Table(name="detective",indexes={
+@Table(name="storage",indexes={
     @Index(name="idx_storage_id",columnList="id"),
     @Index(name="idx_storage_name",columnList="name")
 })
@@ -54,9 +55,12 @@ public class Storage extends BaseEntity{
     String name;
     
     @Column(name="location",unique=true,nullable=false)
-    String loaction;
+    String location;
     
     @OneToMany(mappedBy="storage")
     @JsonManagedReference
-    Set<TrackEntity> evidences = new HashSet<>();
+    Set<Evidence> evidences = new HashSet<>();
+    
+    @Version
+    Integer version;
 }

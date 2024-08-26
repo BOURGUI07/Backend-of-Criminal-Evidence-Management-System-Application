@@ -29,6 +29,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 import main.util.enums.EmploymentStatus;
@@ -67,15 +68,15 @@ public class Detective extends BaseEntity{
     @Column(name="badge_number",unique=true, nullable=false,updatable=false)
     String badgeNumber;
     
+    @Column(name = "detective_rank",nullable=false)
     @Enumerated(EnumType.STRING)
-    @Column(name="rank",nullable=false)
     Rank rank;
     
     @Column(name="armed")
     Boolean armed= false;
     
+    @Column(name = "status",nullable=false)
     @Enumerated(EnumType.STRING)
-    @Column(name="employment_status",nullable=false)
     EmploymentStatus status;
     
     @ManyToMany

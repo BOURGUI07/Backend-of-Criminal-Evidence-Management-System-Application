@@ -13,7 +13,7 @@ public enum TrackAction {
     
     public static TrackAction fromString(String trackAction){
         for(var x:TrackAction.values()){
-            if(x.toString().equalsIgnoreCase(trackAction)){
+            if(x.name().equalsIgnoreCase(trackAction)){
                 return x;
             }
         }

@@ -13,7 +13,7 @@ public enum Rank {
     
     public static Rank fromString(String rank){
         for(var x:Rank.values()){
-            if(x.toString().equalsIgnoreCase(rank)){
+            if(x.name().equalsIgnoreCase(rank)){
                 return x;
             }
         }
