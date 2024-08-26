@@ -17,7 +17,7 @@ public enum EmploymentStatus {
     
     public static EmploymentStatus fromString(String status){
         for(var x:EmploymentStatus.values()){
-            if(x.toString().equalsIgnoreCase(status)){
+            if(x.name().equalsIgnoreCase(status)){
                 return x;
             }
         }

@@ -17,6 +17,7 @@ import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -35,7 +36,7 @@ import org.hibernate.annotations.DynamicUpdate;
  * @author hp
  */
 @Entity
-@Table(name="detective",indexes={
+@Table(name="track_entity",indexes={
     @Index(name="idx_track_entity_id",columnList="id")
 })
 @Data
@@ -53,25 +54,28 @@ public class TrackEntity extends BaseEntity{
     Integer id;
     
     
-    @Column(name="date",updatable=false)
+    @Column(name="date",updatable=false,nullable=false)
     LocalDateTime date;
     
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="evidence_id",updatable=false)
+    @JoinColumn(name="evidence_id",updatable=false,nullable=false)
     @JsonBackReference
     @ToString.Exclude
     Evidence evidence;
     
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="detective_id",updatable=false)
+    @JoinColumn(name="detective_id",updatable=false,nullable=false)
     @JsonBackReference
     @ToString.Exclude
     Detective detective;
     
     @Enumerated(EnumType.STRING)
-    @Column(name="action",nullable=false)
+            @Column(name="action",nullable=false)
     TrackAction action;
     
     @Column(name="reason")
     String reason;
+    
+    @Version
+    Integer version;
 }

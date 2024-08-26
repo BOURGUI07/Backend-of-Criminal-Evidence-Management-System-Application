@@ -20,6 +20,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.AccessLevel;
@@ -62,14 +63,14 @@ public class CriminalCase extends BaseEntity{
     String caseNumber;
     
     @Enumerated(EnumType.STRING)
-    @Column(name="case_type",nullable=false,updatable=false)
+            @Column(name="case_type",nullable=false)
     CaseType caseType;
     
     @Column(name="short_desc",nullable=false,length=500)
     String shortDesc;
     
     
-    @Column(name="long_desc",nullable=false,length=10000)
+    @Column(name="long_desc",length=10000)
     String longDesc;
     
     
@@ -77,7 +78,7 @@ public class CriminalCase extends BaseEntity{
     String notes;
     
     @Enumerated(EnumType.STRING)
-    @Column(name="case_status",nullable=false)
+            @Column(name="case_status",nullable=false)
     CaseStatus caseStatus;
     
     @ManyToMany(mappedBy="criminalCases")
@@ -95,6 +96,8 @@ public class CriminalCase extends BaseEntity{
     @JsonManagedReference
     Set<Evidence> evidences = new HashSet<>();
     
-                                    
+    
+    @Version
+    Integer version;
     
 }

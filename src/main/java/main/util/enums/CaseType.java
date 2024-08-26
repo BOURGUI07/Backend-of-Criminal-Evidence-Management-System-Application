@@ -16,7 +16,7 @@ public enum CaseType {
     
     public static CaseType fromString(String caseTypeName){
         for(var x:CaseType.values()){
-            if(x.toString().equalsIgnoreCase(caseTypeName)){
+            if(x.name().equalsIgnoreCase(caseTypeName)){
                 return x;
             }
         }
