@@ -4,17 +4,26 @@
  */
 package main.dto.request.creation;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
 import java.time.LocalDateTime;
 import java.util.Optional;
+import main.validation.ValidTrackAction;
 
 /**
  *
  * @author hp
  */
+@JsonIgnoreProperties(ignoreUnknown=true)
 public record TrackEntityCreationRequest(
+        @PastOrPresent
         LocalDateTime date,
+        @NotBlank(message="evidence Id is mandatory")
         Integer evidenceId,
+        @NotBlank(message="detective Id is mandatory")
         Integer detectiveId,
+        @ValidTrackAction
         String trackAction,
         Optional<String> reason
         ) {
