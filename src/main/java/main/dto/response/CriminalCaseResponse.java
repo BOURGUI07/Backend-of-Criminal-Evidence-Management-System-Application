@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Record.java to edit this template
  */
-package main.response;
+package main.dto.response;
 
 import java.time.Instant;
 import java.util.Optional;
@@ -16,6 +16,7 @@ import main.util.enums.CaseType;
  */
 public record CriminalCaseResponse(
         Integer id,
+        String caseNumber,
         CaseType caseType,
         String shortdesc,
         Optional<String> longDesc,

@@ -20,6 +20,7 @@ public record EvidenceCreationRequest(
         String evidenceNumber,
         @NotBlank(message="item name is mandatory")
         String itemName,
+        Optional<String> notes,
         Optional<Integer> storageId,
         Optional<Boolean> archived
         ) {

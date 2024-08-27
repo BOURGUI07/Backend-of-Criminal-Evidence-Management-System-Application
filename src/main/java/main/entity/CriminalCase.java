@@ -21,8 +21,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -84,7 +84,7 @@ public class CriminalCase extends BaseEntity{
     @ManyToMany(mappedBy="criminalCases")
     @JsonBackReference
     @ToString.Exclude
-    Set<Detective> detectives = new HashSet<>();
+    List<Detective> detectives = new ArrayList<>();
     
     
     @OneToOne
@@ -94,7 +94,7 @@ public class CriminalCase extends BaseEntity{
     
     @OneToMany(mappedBy="criminalCase",cascade=CascadeType.ALL, orphanRemoval=true)
     @JsonManagedReference
-    Set<Evidence> evidences = new HashSet<>();
+    List<Evidence> evidences = new ArrayList<>();
     
     
     @Version

@@ -19,7 +19,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -83,7 +85,7 @@ public class Evidence extends BaseEntity{
     
     @OneToMany(mappedBy="evidence",cascade=CascadeType.ALL,orphanRemoval=true)
     @JsonManagedReference
-    Set<TrackEntity> trackEntities = new HashSet<>();
+    List<TrackEntity> trackEntities = new ArrayList<>();
     
     @Version
     Integer version;
