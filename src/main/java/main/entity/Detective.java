@@ -20,7 +20,9 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -88,7 +90,7 @@ public class Detective extends BaseEntity{
     
     @OneToMany(mappedBy="detective",cascade=CascadeType.ALL, orphanRemoval=true)
     @JsonManagedReference
-    Set<TrackEntity> trackEntities = new HashSet<>();
+    List<TrackEntity> trackEntities = new ArrayList<>();
     
     
 }

@@ -6,6 +6,7 @@ package main.dto.request.creation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -20,24 +21,8 @@ import main.validation.ValidRank;
  */
 @JsonIgnoreProperties(ignoreUnknown=true)
 public record DetectiveCreationRequest(
-        @NotBlank(message="username is mandatory")
-                @Size(min=5,max=100)
-        String username,
-        @NotBlank(message="firstname is mandatory")
-                @Size(min=5,max=100)
-        String firstname,
-        @NotBlank(message="lastname is mandatory")
-                @Size(min=5,max=100)
-        String lastname,
-        @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
-             message = "password must be at least 8 characters,"
-                     + " one lowercase letter,"
-                     + " one uppercase letter,"
-                     + " one number,"
-                     + " and one special character")
-        String password,
-        @PastOrPresent
-        LocalDateTime hiringDate,
+        @NotNull
+        PersonCreationRequest request,
         @NotBlank(message="detective badge number is mandatory")
         String badgeNumber,
         @ValidRank

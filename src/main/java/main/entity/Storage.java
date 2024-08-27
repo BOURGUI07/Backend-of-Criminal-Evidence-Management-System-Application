@@ -15,7 +15,9 @@ import jakarta.persistence.Index;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -59,7 +61,7 @@ public class Storage extends BaseEntity{
     
     @OneToMany(mappedBy="storage")
     @JsonManagedReference
-    Set<Evidence> evidences = new HashSet<>();
+    List<Evidence> evidences = new ArrayList<>();
     
     @Version
     Integer version;

@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Record.java to edit this template
  */
-package main.response;
+package main.dto.response;
 
 import java.time.Instant;
 import java.util.Optional;
 import java.util.Set;
-import main.entity.CriminalCase;
 
 /**
  *
@@ -15,7 +14,7 @@ import main.entity.CriminalCase;
  */
 public record EvidenceResponse(
         Integer id,
-        CriminalCase criminalCase,
+        Integer criminalCaseId,
         String evidenceNumber,
         String itemName,
         Optional<Integer> storageId,
