@@ -72,7 +72,7 @@ public class Evidence extends BaseEntity{
     @Column(name="number",nullable=false,unique=true, updatable=false)
     String evidenceNumber;
     
-    @Column(name="item_name",nullable=false,unique=true)
+    @Column(name="item_name",nullable=false)
     String itemName;
     
     @Column(name="notes")
