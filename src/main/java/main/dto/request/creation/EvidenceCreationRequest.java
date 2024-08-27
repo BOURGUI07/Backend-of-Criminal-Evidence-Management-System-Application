@@ -4,15 +4,21 @@
  */
 package main.dto.request.creation;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Optional;
 
 /**
  *
  * @author hp
  */
+@JsonIgnoreProperties(ignoreUnknown=true)
 public record EvidenceCreationRequest(
-        String criminalCase,
+        @NotBlank(message="criminal case Id is mandatory")
+        Integer criminalCaseId,
+        @NotBlank(message="evidence number is mandatory")
         String evidenceNumber,
+        @NotBlank(message="item name is mandatory")
         String itemName,
         Optional<Integer> storageId,
         Optional<Boolean> archived

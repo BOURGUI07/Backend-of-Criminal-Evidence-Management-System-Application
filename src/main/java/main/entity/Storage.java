@@ -51,10 +51,10 @@ public class Storage extends BaseEntity{
     Integer id;
     
     
-    @Column(name="name",unique=true,nullable=false)
+    @Column(name="name",unique=true,nullable=false,length=100)
     String name;
     
-    @Column(name="location",unique=true,nullable=false)
+    @Column(name="location",unique=true,nullable=false,length=200)
     String location;
     
     @OneToMany(mappedBy="storage")
