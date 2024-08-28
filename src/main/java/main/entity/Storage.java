@@ -59,7 +59,7 @@ public class Storage extends BaseEntity{
     @Column(name="location",unique=true,nullable=false,length=200)
     String location;
     
-    @OneToMany(mappedBy="storage")
+    @OneToMany(mappedBy="storage",cascade=CascadeType.PERSIST)
     @JsonManagedReference
     List<Evidence> evidences = new ArrayList<>();
     

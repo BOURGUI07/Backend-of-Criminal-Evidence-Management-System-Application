@@ -5,7 +5,7 @@
 package main.dto.response;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  *
@@ -16,7 +16,7 @@ public record PersonResponse(
         String username,
         String firstname,
         String lastname,
-        LocalDateTime hiringDate,
+        LocalDate hiringDate,
         Instant createdDate
         ) {
 
