@@ -9,7 +9,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  *
@@ -34,7 +34,7 @@ public record PersonCreationRequest(
                      + " and one special character")
         String password,
         @PastOrPresent
-        LocalDateTime hiringDate
+        LocalDate hiringDate
         ) {
 
 }
