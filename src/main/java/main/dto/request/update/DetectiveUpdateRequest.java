@@ -11,9 +11,7 @@ import java.util.Optional;
  * @author hp
  */
 public record DetectiveUpdateRequest(
-        String username,
-        String firstname,
-        String lastname,
+        PersonUpdateRequest request,
         String rank,
         Optional<Boolean> armed,
         String employmentStatus

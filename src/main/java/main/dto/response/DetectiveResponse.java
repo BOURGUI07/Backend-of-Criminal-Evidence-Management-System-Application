@@ -5,7 +5,6 @@
 package main.dto.response;
 
 import java.time.Instant;
-import java.util.Optional;
 import java.util.Set;
 import main.util.enums.EmploymentStatus;
 import main.util.enums.Rank;
@@ -19,7 +18,7 @@ public record DetectiveResponse(
         PersonResponse personResponse,
         String badgeNumber,
         Rank rank,
-        Optional<Boolean> armed,
+        Boolean armed,
         EmploymentStatus employmentStatus,
         Set<Integer> criminalCaseIds,
         Set<Integer> trackEntityIds,
