@@ -20,7 +20,7 @@ public interface EvidenceRepo extends JpaRepository<Evidence,Integer>{
     List<Evidence> findByCriminalCaseId(Integer id);
     List<Evidence> findByStorageId(Integer id);
     boolean existsByEvidenceNumber(String number);
-    List<Evidence> findByIsArchivedTrue();
+    List<Evidence> findByArchivedTrue();
     @Override
     Page<Evidence> findAll(Pageable pageable);
 }

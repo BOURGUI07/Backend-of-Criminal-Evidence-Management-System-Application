@@ -24,9 +24,9 @@ public interface DetectiveRepo extends JpaRepository<Detective,Integer>{
     @Override
     Page<Detective> findAll(Pageable pageable);
     boolean existsByBadgeNumberIgnoreCase(String badgeNumber);
-    Optional<Detective> findByPersonFirstameIgnoreCaseAndPersonlastnameIgnoreCase(String firstname,String lastname);
+    Optional<Detective> findByPersonFirstnameIgnoreCaseAndPersonLastnameIgnoreCase(String firstname,String lastname);
     Optional<Detective> findByPersonId(Integer id);
-    List<Detective> findByIsArmedTrue();
+    List<Detective> findByArmedTrue();
     List<Detective> findByPersonHiringDateBetween(LocalDateTime start, LocalDateTime end);
-    List<Detective> findByIsArmedAndRankAndEmploymentStatus(Boolean armed, Rank rank,EmploymentStatus status);
+    List<Detective> findByArmedAndRankAndStatus(Boolean armed, Rank rank,EmploymentStatus status);
 }
