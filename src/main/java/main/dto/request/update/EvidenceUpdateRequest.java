@@ -11,10 +11,11 @@ import java.util.Optional;
  * @author hp
  */
 public record EvidenceUpdateRequest(
-        String criminalCase,
+        Integer criminalCaseId,
         Integer storageId,
         String itemName,
-        Optional<Boolean> archived
+        Optional<Boolean> archived,
+        Optional<String> notes
         ) {
 
 }
